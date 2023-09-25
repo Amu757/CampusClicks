@@ -1,0 +1,33 @@
+.homepage {
+  height: 91vh;
+  width: 99.14vw;
+  display: flex;
+  position: relative;
+}
+.homepage .left {
+  background-color: rgb(194, 234, 255);
+  width: 50%;
+}
+.homepage .right {
+  background-color: rgb(232, 232, 232);
+  width: 50%;
+}
+.homepage .above {
+  height: 25vh;
+  width: 30vw;
+  position: absolute;
+  top: 41%;
+  left: 35%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+  /* background-color: red; */
+}
+.above p {
+  color: rgb(78, 78, 253);
+  margin-top: -30px;
+  margin-bottom: 30px;
+  font-weight: 550;
+}

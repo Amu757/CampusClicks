@@ -1,0 +1,118 @@
+.postmodal {
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.475);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.postmodal .outer-container {
+  width: 60vw;
+  height: 70vh;
+  margin: 10vh 20vw;
+  padding: 20px;
+  border: 1px solid #ccc;
+  background-color: rgb(0, 0, 0);
+  border-radius: 8px;
+  position: relative;
+}
+.outer-container p {
+  text-align: center;
+  color: #dadada;
+  font-size: 19px;
+  margin-top: -10px;
+  margin-bottom: 10px;
+}
+.outer-container .sharebtn {
+  color: #0095f6;
+  background-color: transparent;
+  border: 0;
+  font-size: 17px;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  cursor: pointer;
+}
+.sharebtn:hover {
+  color: white;
+}
+.inputs {
+  display: flex;
+  justify-content: space-between;
+}
+/* Styles for the image input */
+.outer-container .imgbox {
+  width: 50%;
+  border: none;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  transform: scale(2);
+  overflow: hidden;
+  z-index: 1;
+}
+.hr {
+  height: 1px;
+  background-color: #ccc;
+  border: none;
+}
+.outer-container .postmessagebox {
+  width: 48%;
+  border-radius: 4px;
+  font-size: 14px;
+  padding: 20px;
+  color: white;
+  border: 1px solid #ccc;
+  z-index: 4;
+}
+.postmessagebox textarea {
+  height: 50vh;
+  width: 27.5vw;
+  font-size: 21px;
+  color: white;
+  background-color: transparent;
+  outline: none;
+  border: 0;
+}
+.closemodal {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 2.7rem;
+  height: 50px;
+  width: 50px;
+}
+input[type="file"] {
+  display: none;
+}
+.labelbox {
+  margin-top: 1%;
+  height: 49%;
+  width: 48%;
+  font-size: 35px;
+  /* background-color: red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1%;
+  border: 1px solid #bbb;
+  box-shadow: 3px 5px 10px rgba(255, 255, 255, 0.509);
+  overflow: hidden;
+}
+.labelbox img {
+  /* height: 100%; */
+  width: 100%;
+}
+.images {
+  height: 43vh;
+  width: 100vw;
+  z-index: 20;
+  display: flex;
+  column-gap: 20px;
+}
+.images img {
+  height: 100%;
+  width: 20vw;
+}

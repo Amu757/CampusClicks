@@ -1,0 +1,58 @@
+.container_ {
+  width: 20vw;
+}
+.space {
+  height: 3vh;
+}
+.onerow {
+  margin-top: -33px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 5rem;
+}
+.left_side {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
+  padding: 2px 15px;
+  cursor: pointer;
+  position: relative;
+}
+.onerow .pic {
+  border-radius: 40px;
+  height: 87%;
+  width: 22%;
+  overflow: hidden;
+  background-color: rgb(184, 184, 184);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.onerow .pic img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 40px;
+}
+.onerow .info {
+  margin-left: 17px;
+  display: flex;
+  flex-direction: column;
+  height: 60%;
+  width: 80%;
+}
+.info .username {
+  color: white;
+}
+.info .followStatus {
+  color: rgb(136, 136, 136);
+}
+.info .closeicon {
+  position: absolute;
+  right: 10px;
+  top: 38%;
+}

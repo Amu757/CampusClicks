@@ -1,0 +1,75 @@
+.contactpage {
+  width: 100%;
+  margin: auto;
+}
+
+.top-container {
+  display: flex;
+  align-items: center;
+  column-gap: 40px;
+  width: 80%;
+  height: 15vh;
+  margin: auto;
+  margin-top: 40px;
+  margin-bottom: -50px;
+  /* background-color: aquamarine; */
+}
+.top-container .top-fields {
+  width: 28%;
+  height: 70%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  column-gap: 15px;
+  padding: 10px 20px;
+  border: 1px solid rgb(200, 198, 198);
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px 5px rgb(225, 225, 225);
+  /* background-color: red; */
+}
+.top-fields i {
+  color: rgb(104, 185, 247);
+  font-size: 25px;
+}
+.bottom-container .info {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ------ */
+.bottom-container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+  width: 55%;
+  padding: 3% 8%;
+  background-color: transparent;
+}
+
+.bottom-container .title {
+  font-weight: 610;
+}
+.bottom-container .inputs-tank {
+  display: flex;
+  justify-content: space-between;
+  column-gap: 20px;
+}
+.bottom-container .inputs-tank input {
+  width: 32%;
+  padding: 10px 20px;
+  outline: none;
+  border: 1px solid rgb(200, 198, 198);
+  border-radius: 5px;
+  background-color: transparent;
+}
+.messagebox {
+  padding: 10px 20px;
+  outline: none;
+  border: 1px solid rgb(200, 198, 198);
+  border-radius: 5px;
+  background-color: transparent;
+}
+.sendbtn {
+  margin-top: -2px;
+  width: 20%;
+}

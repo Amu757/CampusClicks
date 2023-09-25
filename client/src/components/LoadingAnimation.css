@@ -1,0 +1,47 @@
+/* LoadingAnimation.css */
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  /* background-color: #4444446c; Background color of the page */
+}
+
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle {
+  width: 20px;
+  height: 20px;
+  background-color: #3498db; /* Change this to your desired color */
+  border-radius: 50%;
+  margin: 0 10px;
+  animation: scale 1s infinite ease-in-out;
+}
+
+.circle-1 {
+  animation-delay: 0s;
+}
+
+.circle-2 {
+  animation-delay: 0.3s;
+}
+
+.circle-3 {
+  animation-delay: 0.6s;
+}
+
+@keyframes scale {
+  0%,
+  100% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1);
+  }
+}
