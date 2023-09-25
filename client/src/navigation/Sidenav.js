@@ -76,9 +76,9 @@ function Sidenav(props) {
         setShowSearch(!showSearch);
       }
     }
-    console.log("you clicked ", activeBtn);
+    // console.log("you clicked ", activeBtn);
     if (activeBtn !== "messageicon") {
-      console.log("not messageicon");
+      // console.log("not messageicon");
       // if (showMessage === true) {
       setShowMessage(false);
       // }
@@ -94,11 +94,13 @@ function Sidenav(props) {
   return (
     <div className="sidenav">
       <div>
-        <img
-          className="sidenav__logo"
-          // src="https://www.edigitalagency.com.au/wp-content/uploads/instagram-logo-icon-white-border-text-black-background.png"
-          src={logoImage}
-          alt="logo"></img>
+        <NavLink to="/" onClick={() => console.log("i am clicked")}>
+          <img
+            className="sidenav__logo"
+            // src="https://www.edigitalagency.com.au/wp-content/uploads/instagram-logo-icon-white-border-text-black-background.png"
+            src={logoImage}
+            alt="logo"></img>
+        </NavLink>
       </div>
       <div className="sidenav__buttons">
         <button className="sidenav__button" onClick={() => { props.setShowProfile(false); setActiveBtn("homeicon"); }}>

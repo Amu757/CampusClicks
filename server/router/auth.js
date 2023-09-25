@@ -16,7 +16,7 @@ router.post("/saveMessage", async (req, res) => {
 
         // Find the user document that contains the post
         let founduser = await User.findOne({ _id: userid });
-        console.log("bakend i got user",);
+        console.log("bakend i got user");
 
         if (!founduser) {
             return res.status(404).json({ success: false, message: 'User not found' });
@@ -34,11 +34,11 @@ router.post("/saveMessage", async (req, res) => {
 
 router.post("/addlike", async (req, res) => {
     try {
-        const { postid, userid } = req.body;
+        const { postid, username } = req.body;
 
         // Find the user document that contains the post
-        let user = await User.findOne({ _id: userid });
-        console.log("bakend i got user",);
+        let user = await User.findOne({ name: username });
+        console.log("bakend i got user", user);
 
         if (!user) {
             return res.status(404).json({ success: false, message: 'User not found' });

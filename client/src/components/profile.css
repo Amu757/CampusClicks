@@ -174,8 +174,8 @@
   height: 100%;
   display: flex;
   flex-wrap: wrap;
-  column-gap: 4px;
-  row-gap: 5px;
+  column-gap: 2px;
+  /* row-gap: 5px; */
 }
 .postcontainer {
   width: 33%;

@@ -1,11 +1,16 @@
 import React, { useState } from 'react';
 import { MdCloudUpload } from 'react-icons/md';
+
+import Loadinghome from "../components/Loadinghome";
+
 import "./createpost.css"
 
 export let callShowPosts = true;
 
 function PostForm({ onClose, userData, Reload }) {
     // const [showCreatePost, setShowCreatePost] = useState(false);
+    const [isLoading, setIsLoading] = useState(false); // Add loading state
+
 
     const [caption, setCaption] = useState('');
     const [image, setImage] = useState(false);
@@ -36,6 +41,9 @@ function PostForm({ onClose, userData, Reload }) {
 
     const handlePostSubmit = async (e) => {
         e.preventDefault();
+
+        setIsLoading(true);
+
         if (image) {
             const res = await fetch("/upload", {
                 method: "POST",
@@ -45,6 +53,9 @@ function PostForm({ onClose, userData, Reload }) {
                 body: JSON.stringify({ userID: userData._id, imgUrl: image, caption: caption })
             });
             const data = await res.json();
+
+            setIsLoading(false);
+
             // console.log(data);
             if (data.success) {
                 console.log('sucessful');
@@ -64,31 +75,35 @@ function PostForm({ onClose, userData, Reload }) {
 
 
     return (
-        <>
-            <div className='postmodal'>
-                <div className='closemodal' onClick={onClose}> <i class="zmdi zmdi-close"></i></div>
-                <div className='outer-container' id='mycontainer'>
-                    <p>Create New Post</p>
-                    <hr className='hr' />
-                    <form className="inputs">
-                        <div className='imgbox'>
-                            <label htmlFor='uploadImage' className='labelbox'>
-                                <input type="file" id='uploadImage' accept="image/*" onChange={handleImageChange} />
-                                {image ? <img src={image} alt='brokenlink' /> : <MdCloudUpload />}
-                            </label>
-                        </div>
+        // <>
+        <div className='postmodal'>
+            {isLoading ? <Loadinghome /> : (
+                <>
+                    <div className='closemodal' onClick={onClose}> <i class="zmdi zmdi-close"></i></div>
+                    <div className='outer-container' id='mycontainer'>
+                        <p>Create New Post</p>
+                        <hr className='hr' />
+                        <form className="inputs">
+                            <div className='imgbox'>
+                                <label htmlFor='uploadImage' className='labelbox'>
+                                    <input type="file" id='uploadImage' accept="image/*" onChange={handleImageChange} />
+                                    {image ? <img src={image} alt='brokenlink' /> : <MdCloudUpload />}
+                                </label>
+                            </div>
 
-                        <div className='postmessagebox'>
-                            <label htmlFor='imgCaption'>
-                                <textarea id='imgCaption' placeholder='Write a caption..' value={caption} onChange={handleCaptionChange} />
-                            </label>
-                        </div>
-                        <button onClick={handlePostSubmit} className='sharebtn'>Share</button>
-                    </form>
-                </div>
-            </div >
+                            <div className='postmessagebox'>
+                                <label htmlFor='imgCaption'>
+                                    <textarea id='imgCaption' placeholder='Write a caption..' value={caption} onChange={handleCaptionChange} />
+                                </label>
+                            </div>
+                            <button onClick={handlePostSubmit} className='sharebtn'>Share</button>
+                        </form>
+                    </div>
+                </>
+            )}
+        </div >
 
-        </>
+        // </>
     );
 }
 

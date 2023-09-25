@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import "./Post.css"
 import { Avatar } from '@mui/material'
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz'
@@ -15,10 +15,12 @@ function Post({ userid, user, postImage, likes, timestamp, postitem }) {
     const [locallikes, setLocalLikes] = useState(likes);
 
     let postid = postitem._id;
+
     const handlelike = async () => {
+        let username = user;
         // console.log("liked")
+
         setLikedbyUser(!likedbyuser);
-        setLocalLikes(locallikes + 1);
 
         // console.log("this is post", postitem);
         const res = await fetch("/addlike", {
@@ -27,18 +29,30 @@ function Post({ userid, user, postImage, likes, timestamp, postitem }) {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                postid, userid
+                postid, username  // this use id is of login user not owner of post
             })
         });
         const data = await res.json();
 
-        if (data.status === 500 || !data) {
-            console.log("invalid req")
+        if (data.success === false || !data) {
+            console.log("invalid req ")
         }
         else {
-            console.log("liked succesfuly",)
+
+            console.log("liked succesfuly ");
         }
+
     }
+
+    useEffect(() => {
+        if (likedbyuser) {
+            setLocalLikes(locallikes + 1);
+        } else {
+            setLocalLikes(locallikes - 1);
+        }
+    }, [likedbyuser]);
+
+
 
     return (
         <div className='post'>
